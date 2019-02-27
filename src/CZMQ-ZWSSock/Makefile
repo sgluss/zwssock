@@ -1,11 +1,11 @@
 TARGET= zwstest
 SRCS = main.c  zwsdecoder.c  zwshandshake.c  zwssock.c
 CC = gcc
-DEBUG = -g
+DEBUG = -g -ggdb
 MILITANT = -Werror
 CFLAGS= -std=gnu99  -Wall $(shell pkg-config --cflags libczmq zlib) $(DEBUG) $(MILITANT)
 LDFLAGS = -Wall $(DEBUG)
-LIBS =  $(shell pkg-config --libs libczmq zlib)
+LIBS =  $(shell pkg-config --libs libczmq zlib hiredis)
 
 DEPDIR=./deps
 OBJDIR=./objs
